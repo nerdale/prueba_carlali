@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputTotal = document.getElementById("total");
   const mensajeHora = document.getElementById("mensaje-hora");
 
-  function formatearChileno(numero) {
+  function formatearChileno(numero){
     return `$${numero.toLocaleString("es-CL")}`;
   }
 
-  function calcularYMostrar() {
+  function calcularYMostrar(){
     const sueldoRaw = inputSueldo.value.replace(/\D/g, "");
     const sueldo = parseInt(sueldoRaw, 10);
 
@@ -25,14 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const horasSemanales = parseInt(selectHorasSemanales.value, 10) || 44;
-    const valorHoraExtra = Math.floor(
-      ((sueldo * 28) / (30 * horasSemanales * 4)) * 1.5
-    );
+    const valorHoraExtra = ((sueldo * 28) / (30 * horasSemanales * 4)) * 1.5;
 
     inputHoraExtra.value = formatearChileno(valorHoraExtra);
 
     // Si no hay horas extras válidas, no calcular el total, pero no limpiar mensaje
-    if (!horasExtras || isNaN(horasExtras)) {
+    if (!horasExtras || isNaN(horasExtras)){
       inputTotal.value = "";
       return;
     }
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inputTotal.value = formatearChileno(total);
 
     // Actualizar mensaje solo si hay ambos datos
-    if (mensajeHora) {
+    if (mensajeHora){
       const textoHoras =
         horasExtras === 1 ? "1 hora extra" : `${horasExtras} horas extras`;
       mensajeHora.textContent = `Esto es lo que recibirás por trabajar ${textoHoras}.`;
