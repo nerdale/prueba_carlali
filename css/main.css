@@ -90,3 +90,8 @@ body {
     background-color: #38B6A1 !important;
     color: white !important;
 }
+
+.form-text {
+    color: white;
+    font-style: italic;
+}
