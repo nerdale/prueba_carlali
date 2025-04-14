@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de horas extras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+
+    <section class="container-sm px-5 py-5 calculadora-container">
+      <!-- Título -->
+      <div class="text-center mb-4">
+        <h4>Calculadora de horas extras</h4>
+      </div>
+
+      <!-- Paso 1: Ingreso de sueldo y valor hora extra -->
+      <div class="mb-4 pb-3 border-bottom">
+        <div class="d-flex align-items-center mb-3">
+          <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center me-2 custom-circle">1</div>
+          <h5 class="mb-0">Ingresa tu sueldo</h5>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Sueldo base</label>
+                <input type="text" class="form-control" placeholder="Sueldo base" id="sueldo"/>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Valor de la hora extra</label>
+                <input class="form-control" id="hora-extra" type="text" value="Valor hora extra" disabled readonly/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 2: Selección de horas semanales trabajadas -->
+      <div class="mb-4 pb-3 border-bottom">
+        <div class="d-flex align-items-center mb-3">
+          <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center me-2 custom-circle">2</div>
+          <h5 class="mb-0">Horas semanales trabajadas</h5>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Selecciona horas semanales trabajadas</label>
+                <select class="form-select" id="hora-semanal">
+                  <option selected>Selecciona una opción</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3: Ingreso de horas extras y cálculo total a recibir -->
+      <div>
+        <div class="d-flex align-items-center mb-3">
+          <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center me-2 custom-circle">3</div>
+          <h5 class="mb-0">Cantidad de horas extras</h5>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <form>
+              <div class="mb-3 pb-3 border-bottom">
+                <label class="form-label">Horas extras trabajadas</label>
+                <input type="number" class="form-control" id="horas-extras-trabajadas" placeholder="Horas extras trabajadas"/>
+              </div>
+
+              <!-- Total a pagar -->
+              <div class="mb-3 text-center">
+                <h5>
+                  <label class="form-label" id="mensaje-hora">Esto es lo que recibirás por trabajar horas extras</label>
+                </h5>
+                <input class="form-control" type="text" value="Total a pagar" id="total" disabled readonly/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
